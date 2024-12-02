@@ -41,12 +41,12 @@ public class EmployeeController {
             boolean loginExists = employeeService.checkLogin(login);
 
             if (loginExists) {
-                return ResponseEntity.ok("Данный логин существует");
+                return ResponseEntity.ok("данный логин существует");
             } else {
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Логина не существует или неверный");
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("логина не существует или неверный");
             }
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Что-то пошло не так");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("что-то пошло не так");
         }
     }
 
@@ -66,11 +66,11 @@ public class EmployeeController {
                 return ResponseEntity.ok(response);
             } else {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                        .body("Логина не существует или неверный");
+                        .body("логина не существует или неверный");
             }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body("Что-то пошло не так");
+                    .body("что-то пошло не так");
         }
     }
 
@@ -85,15 +85,15 @@ public class EmployeeController {
                 boolean codeExists = codeRepository.checkCode(employee.getId(), code);
 
                 if (codeExists) {
-                    return ResponseEntity.ok("Дверь открылась");
+                    return ResponseEntity.ok("дверь открылась");
                 } else {
-                    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Что-то пошло не так");
+                    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("что-то пошло не так");
                 }
             } else {
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Логина не существует или неверный");
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("логина не существует или неверный");
             }
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Что-то пошло не так");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("что-то пошло не так");
         }
     }
 }
