@@ -81,8 +81,7 @@ public class EmployeeController {
             boolean loginExists = employeeService.checkLogin(login);
 
             if (loginExists) {
-                Employee employee = employeeRepository.getEmployeeByLogin(login);
-                boolean codeExists = codeRepository.checkCode(employee.getId(), code);
+                boolean codeExists = codeRepository.checkCode(code);
 
                 if (codeExists) {
                     return ResponseEntity.ok("дверь открылась");
